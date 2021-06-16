@@ -1,6 +1,7 @@
 #include "Persistence.h"
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "Local.h"
 #include "Controler.h"
 
@@ -21,26 +22,27 @@ void Persistence::salvarArquivo(Controler c1)
                 for(j=0;j<=28;j++){
                     for(i = 0; i<150; i++)
                     {
-                        if(c1.getLocais(j)->insumos[i]->getTipoInsumo() == 1||c1.getLocais(j)->insumos[i]->getTipoInsumo() == 2||c1.getLocais(j)->insumos[i]->getTipoInsumo() == 3){
+                        if(c1.getLocais(j)->insumos[i]->getAtivo() == 1){
 
-                            ArqInsumos << c1.getLocais(j)->insumos[i]->getDescricao() << std::endl;
+                            ArqInsumos << c1.getLocais(j)->insumos[i]->getDados() << std::endl;
+                            c1.getLocais(j)->insumos[i]->setAtivo(0);
+                            continue;
                             }
-                        if(c1.getLocais(j)->insumos[i]->getAtivo()==0){
-                            break;
                         }
 
                     }
-                }
+
+
 
 
         ArqInsumos.close();
 }
 
-/*
-Insumo Persistence::lerArquivo(Controler c1)
+
+Insumo *Persistence::lerArquivo(Controler c1)
 {
     //Variaveis utility
-    int i, ati, tip, j;
+    int i=0, ati, tipI, j=0;
 
     //Variaveis de Gerais dos Insumos
     std::string n;
@@ -48,6 +50,20 @@ Insumo Persistence::lerArquivo(Controler c1)
     double v;
     std::string dt;
     std::string nF;
+
+    //Variaveis da Vacina
+    std::string ti;
+    int qD;
+    int it;
+
+    //Variaveis de Medicamento
+    std::string adm;
+    std::string dosagem;
+    std::string dispo;
+
+    //Variaveis de EPI
+    int tip;
+    std::string descri;
 
     Vacina *vac;
     Medicamento *med;
@@ -64,16 +80,9 @@ Insumo Persistence::lerArquivo(Controler c1)
     {
         if(ArqInsumos.eof()||ArqInsumos.bad())
             break;
-        ArqInsumos >> tip;
-        ArqInsumos >> ati;
+        ArqInsumos >> tipI;
 
-        if(ati==0)
-        {
-            break;
-        }
-        if(ati==1)
-        {
-            switch (tip)
+        switch (tipI)
         {
         case 0:
         {
@@ -81,11 +90,10 @@ Insumo Persistence::lerArquivo(Controler c1)
         }
         case 1:
 
-        {   std::cout<<"novo obj tipovacina"<<std::endl;
+        {
             vac = new Vacina();
 
-            vac->setTipoInsumo(tip);
-            vac->setAtivo(ati);
+            vac->setTipoInsumo(tipI);
 
             ArqInsumos >> n;
             vac->setNome(n);
@@ -99,15 +107,20 @@ Insumo Persistence::lerArquivo(Controler c1)
             vac->setNomeFabricante(nF);
 
             // exclusivas de vacina
-            vac->leAtributos(ArqInsumos);
+            ArqInsumos >> ti;
+            vac->setTipo(ti);
+            ArqInsumos >> qD;
+            vac->setQuantDoses(qD);
+            ArqInsumos >> it;
+            vac->setIntervalo(it);
 
-            c1.getLocais(j)->insumos(i) = *vac;
+            c1.getLocais(j)->insumos[i] = vac;
             i++;
             break;
 
         }case 2:
 
-        {   std::cout<<"novo obj tipo med"<<std::endl;
+        {
             med = new Medicamento();
 
             med->setTipoInsumo(tip);
@@ -124,16 +137,21 @@ Insumo Persistence::lerArquivo(Controler c1)
             ArqInsumos >> nF;
             med->setNomeFabricante(nF);
 
-            // exclusivas de vacina
-            med->leAtributos(ArqInsumos);
+            // exclusivas de medicamento
+            ArqInsumos >> adm;
+            med->setAdministracao(adm);
+            ArqInsumos >> dosagem;
+            med->setDosagem(dosagem);
+            ArqInsumos >> dispo;
+            med->setDisponibilizacao(dispo);
 
-            c1.getLocais(j)->insumos(i) = *med;
+            //c1.getLocais(j)->insumos[i] = med;
             i++;
             break;
         }
         case 3:
 
-        {   std::cout<<"novo obj tipo med"<<std::endl;
+        {
             epi = new EPI();
 
             epi->setTipoInsumo(tip);
@@ -151,18 +169,22 @@ Insumo Persistence::lerArquivo(Controler c1)
             epi->setNomeFabricante(nF);
 
             // exclusivas de vacina
-            epi->leAtributos(ArqInsumos);
+            ArqInsumos >> tip;
+            epi->setTipo(tip);
+            ArqInsumos >> descri;
+            epi->setDescricao(descri);
 
-            c1.getLocais(j)->insumos(i) = *vac;
+            c1.getLocais(j)->insumos[i] = epi;
             i++;
+
             break;
         }
         }
 
         }
-    }
+
     ArqInsumos.close();
 
-    return c1.getLocais(j)->insumos[149];
+    return c1.getLocais(0)->insumos[149];
 }
-*/
+

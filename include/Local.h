@@ -16,8 +16,8 @@ class Local
         //Metodos Set
         void setNome(std::string n);
         void setTipo(int t);
-        Insumo *insumos[150];
         Insumo getInsumo(int in);
+        Insumo *insumos[150];
 
 
     protected:

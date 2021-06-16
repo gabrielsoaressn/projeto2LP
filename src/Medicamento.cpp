@@ -1,6 +1,7 @@
 #include "Medicamento.h"
 #include <string>
 #include <iostream>
+#include <fstream>
 
 Medicamento::Medicamento()
 {
@@ -33,16 +34,23 @@ void Medicamento::setDisponibilizacao(std::string disp){
 }
 std::string Medicamento::getDados()
 {
-    std::string desc =  administracao + "\n"
+    std::string aux2 =  Insumo::getDados()
+    +administracao + "\n"
     + dosagem + "\n"
-    +  disponibilizacao + "\n";
-    return desc;
+    +  disponibilizacao;
+    return aux2;
 }
-/*
+
 void Medicamento::leAtributos(std::ifstream &ArqInsumos)
 {
     ArqInsumos >> administracao;
     ArqInsumos >> dosagem;
     ArqInsumos >> disponibilizacao;
 }
-*/
+
+void Medicamento::salvaAtributos(std::ofstream &ArqInsumos)
+{
+    ArqInsumos << administracao;
+    ArqInsumos << dosagem;
+    ArqInsumos << disponibilizacao;
+}

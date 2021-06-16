@@ -124,6 +124,7 @@ void Controler::consultaInsumosDescricao(Local loc){
         }
     }
 }
+
 void Controler::consultaInsumosPorTipo(Local loc, int tipoInsumo){
 
     int i;
@@ -145,10 +146,15 @@ void Controler::distribuiInsumo(Local dest, std::string nomeDoInsumo){
         if(locais[0].insumos[i]->getNome() == nomeDoInsumo){
             for(y = 0; y < nInsumos; y++){
                 if(dest.insumos[y]->getAtivo() == 0){
-                    *dest.insumos[y] = *locais[0].insumos[i];
-                    locais[0].insumos[y]->setQuantidade(0);
-                    dest.insumos[y]->setAtivo(1);
-                    break;
+                        if(locais[0].insumos[i]->getTipoInsumo()==1)
+                        {
+                            dest.insumos[y] = new Vacina();
+                            //parte que o professor Derzu indicou
+                           // *((Vacina*)dest.insumos[y]) = *((Vacina*)locais[0].insumos[i]);
+                        }
+                        locais[0].insumos[i]->setQuantidade(0);
+                        dest.insumos[y]->setAtivo(1);
+                        break;
                 }
             }
             break;
@@ -157,16 +163,16 @@ void Controler::distribuiInsumo(Local dest, std::string nomeDoInsumo){
     std::cout << "\nInsumo: " << dest.insumos[y]->getNome() << " enviado para " << dest.getNome() << " com sucesso\n" << std::endl;
 }
 
-Local Controler::verificaEstado(std::string est){
+Local *Controler::verificaEstado(std::string est){
 
     int i;
 
     for(i = 0; i < 28; i++){
         if (locais[i].getNome() == est){
-            return locais[i];
+            return &locais[i];
         }
     }
-    return locais[0];
+    return &locais[0];
 }
 
 

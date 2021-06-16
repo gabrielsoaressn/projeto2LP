@@ -11,7 +11,7 @@ class Controler
 
         void cadastraInsumosMs(Insumo *ins);
         void consultaInsumosMS();
-        Local verificaEstado(std::string est);
+        Local *verificaEstado(std::string est);
         void consultaInsumosPorLocal(Local loc);
         void consultaInsumosDescricao(Local loc);
         void consultaInsumosPorTipo(Local loc, int tipoInsumo);

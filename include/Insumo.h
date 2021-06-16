@@ -25,7 +25,8 @@ class Insumo
 
         virtual std::string getDescricao();
         virtual std::string getDados();
-       // virtual void leAtributos(std::ifstream &ArqVacina);
+        virtual void leAtributos(std::ifstream &ArqInsumos);
+        virtual void salvaAtributos(std::ifstream &ArqInsumos);
 
     protected:
         std::string nome;

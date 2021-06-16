@@ -1,9 +1,9 @@
 #ifndef MEDICAMENTO_H
 #define MEDICAMENTO_H
-#include <string.h>
+#include <string>
 #include "Insumo.h"
 #include <iostream>
-
+#include <fstream>
 
 class Medicamento: public Insumo
 {
@@ -16,7 +16,8 @@ class Medicamento: public Insumo
         void setAdministracao(std::string adm);
         void setDosagem(std::string dos);
         void setDisponibilizacao(std::string disp);
-      //  void leAtributos(std::ifstream &ArqVacina);
+        void leAtributos(std::ifstream &ArqVacina);
+        void salvaAtributos(std::ofstream &ArqVacina);
 
     protected:
 

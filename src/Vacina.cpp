@@ -1,6 +1,7 @@
 #include "Vacina.h"
 #include <string>
 #include <iostream>
+#include <fstream>
 
 Vacina::Vacina(): Insumo()
 {
@@ -30,18 +31,25 @@ std::string Vacina::getDescricao(){
     + " doses\nIntervalo: " + std::to_string(intervalo) + " mes(es)." + "\n";
     return aux;
 }
+
 std::string Vacina::getDados()
 {
-    std::string desc = tipo + "\n"
+    std::string aux = Insumo::getDados() + tipo + "\n"
     +  std::to_string(quantDoses) + "\n"
-    +  std::to_string(intervalo) + "\n";
-    return desc;
+    +  std::to_string(intervalo);
+    return aux;
 }
-/*
+
 void Vacina::leAtributos(std::ifstream &ArqInsumos)
 {
     ArqInsumos >> tipo;
     ArqInsumos >> quantDoses;
     ArqInsumos >> intervalo;
 }
-*/
+
+void Vacina::salvaAtributos(std::ofstream &ArqInsumos)
+{
+    ArqInsumos << tipo;
+    ArqInsumos << quantDoses;
+    ArqInsumos << intervalo;
+}

@@ -2,6 +2,7 @@
 #define EPI_H
 #include "Insumo.h"
 #include <string.h>
+#include <fstream>
 
 class EPI: public Insumo
 {
@@ -13,7 +14,8 @@ class EPI: public Insumo
         void setTipo(int t);
         void setDescricao(std::string desc);
         std::string getDados();
-//        void leAtributos(std::ifstream &ArqVacina);
+        void leAtributos(std::ifstream &ArqVacina);
+        void salvaAtributos(std::ofstream &ArqVacina);
 
     protected:
 

@@ -17,7 +17,7 @@ class Persistence
         Persistence();
 
         void salvarArquivo(Controler c1);
-       // Insumo lerArquivo(Controler c1);
+        Insumo *lerArquivo(Controler c1);
     protected:
 
     private:

@@ -3,6 +3,7 @@
 
 #include "Insumo.h"
 #include <string>
+#include <fstream>
 
 class Vacina: public Insumo
 {
@@ -16,7 +17,8 @@ class Vacina: public Insumo
         void setQuantDoses(int qD);
         void setIntervalo(int it);
         std::string getDados();
-     //   void leAtributos(std::ifstream &ArqVacina);
+        void leAtributos(std::ifstream &ArqVacina);
+        void salvaAtributos(std::ofstream &ArqVacina);
 
     protected:
 

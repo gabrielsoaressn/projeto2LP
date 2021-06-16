@@ -1,6 +1,7 @@
 #include "EPI.h"
 #include <string>
 #include <iostream>
+#include <fstream>
 
 EPI::EPI()
 {
@@ -27,14 +28,20 @@ void EPI::setDescricao(std::string desc){
 
 std::string EPI::getDados()
 {
-    std::string desc =  tipo + "\n"
-    + descricao + "\n";
-    return desc;
+    std::string aux3 = Insumo::getDados()
+    + std::to_string(tipo) + "\n"
+    + descricao;
+    return aux3;
 }
-/*
+
 void EPI::leAtributos(std::ifstream &ArqInsumos)
 {
     ArqInsumos >> tipo;
     ArqInsumos >> descricao;
 }
-*/
+
+void EPI::salvaAtributos(std::ofstream &ArqInsumos)
+{
+    ArqInsumos << tipo;
+    ArqInsumos << descricao;
+}

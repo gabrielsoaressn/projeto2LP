@@ -73,12 +73,22 @@ std::string Insumo::getDescricao(){
 
 std::string Insumo::getDados()
 {
-    std::string desc =  nome + "\n"
-    + std::to_string(quantidade) + "\n"
-    +  std::to_string(valorUnitario) + "\n"
-    +  dtVencimento + "\n"
-    + nomeFabricante + "\n";
+    std::string desc = std::to_string(tipoInsumo)+"\n"
+    +nome + "\n"
+    +std::to_string(quantidade) + "\n"
+    +std::to_string(valorUnitario) + "\n"
+    +dtVencimento + "\n"
+    +nomeFabricante + "\n";
     return desc;
 }
 
+void Insumo::leAtributos(std::ifstream &ArqInsumos)
+{
+
+}
+
+void Insumo::salvaAtributos(std::ifstream &ArqInsumos)
+{
+
+}
 
