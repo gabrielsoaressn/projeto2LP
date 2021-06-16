@@ -11,11 +11,12 @@ class Medicamento: public Insumo
         Medicamento();
 
         std::string getDescricao();
+        std::string getDados();
 
         void setAdministracao(std::string adm);
         void setDosagem(std::string dos);
         void setDisponibilizacao(std::string disp);
-        std::string getDados();
+      //  void leAtributos(std::ifstream &ArqVacina);
 
     protected:
 

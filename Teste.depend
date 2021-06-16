@@ -1,0 +1,128 @@
+# depslib dependency file v1.0
+1623265539 source:c:\users\sakyo\documents\lop\teste\src\local.cpp
+	"Local.h"
+
+1623349935 c:\users\sakyo\documents\lop\teste\include\local.h
+	<string>
+	"Insumo.h"
+
+1623355426 c:\users\sakyo\documents\lop\teste\include\insumo.h
+	<string>
+
+1623355426 source:c:\users\sakyo\documents\lop\teste\src\vacina.cpp
+	"Vacina.h"
+	<string>
+	<iostream>
+	<string>
+
+1623355426 c:\users\sakyo\documents\lop\teste\include\vacina.h
+	"Insumo.h"
+	<string>
+
+1623354653 source:c:\users\sakyo\documents\lop\teste\src\insumo.cpp
+	"Insumo.h"
+	<string>
+	<iostream>
+	<string>
+
+1623355426 source:c:\users\sakyo\documents\lop\teste\main.cpp
+	<iostream>
+	<string>
+	"Insumo.h"
+	"Controler.h"
+	"Local.h"
+	"Vacina.h"
+
+1623351421 c:\users\sakyo\documents\lop\teste\include\controler.h
+	"Local.h"
+
+1623353365 source:c:\users\sakyo\documents\lop\teste\src\controler.cpp
+	"Controler.h"
+	"Local.h"
+	"Insumo.h"
+	<iostream>
+
+1623790177 source:c:\users\user\documents\c++\teste\src\local.cpp
+	"Local.h"
+	"Insumo.h"
+
+1623790177 c:\users\user\documents\c++\teste\include\local.h
+	<string>
+	"Insumo.h"
+
+1623801625 c:\users\user\documents\c++\teste\include\insumo.h
+	<string>
+
+1623797803 source:c:\users\user\documents\c++\teste\src\vacina.cpp
+	"Vacina.h"
+	<string>
+	<iostream>
+
+1623801625 c:\users\user\documents\c++\teste\include\vacina.h
+	"Insumo.h"
+	<string>
+
+1623795715 source:c:\users\user\documents\c++\teste\main.cpp
+	<iostream>
+	<string>
+	<fstream>
+	"Insumo.h"
+	"Controler.h"
+	"Local.h"
+	"Vacina.h"
+	"Persistence.h"
+	"Medicamento.h"
+	"EPI.h"
+
+1623792938 c:\users\user\documents\c++\teste\include\controler.h
+	"Local.h"
+
+1623801624 c:\users\user\documents\c++\teste\include\persistence.h
+	<fstream>
+	"Local.h"
+	"Insumo.h"
+	"Controler.h"
+	"Vacina.h"
+	"Medicamento.h"
+	"EPI.h"
+
+1623801625 c:\users\user\documents\c++\teste\include\medicamento.h
+	<string.h>
+	"Insumo.h"
+	<iostream>
+
+1623801625 c:\users\user\documents\c++\teste\include\epi.h
+	"Insumo.h"
+	<string.h>
+
+1623796851 source:c:\users\user\documents\c++\teste\src\controler.cpp
+	"Controler.h"
+	"Vacina.h"
+	<iostream>
+	<string>
+	"Medicamento.h"
+	"EPI.h"
+
+1623796922 source:c:\users\user\documents\c++\teste\src\epi.cpp
+	"EPI.h"
+	<string>
+	<iostream>
+
+1623799649 source:c:\users\user\documents\c++\teste\src\insumo.cpp
+	"Insumo.h"
+	<string>
+	<iostream>
+	<string>
+
+1623797928 source:c:\users\user\documents\c++\teste\src\medicamento.cpp
+	"Medicamento.h"
+	<string>
+	<iostream>
+
+1623798741 source:c:\users\user\documents\c++\teste\src\persistence.cpp
+	"Persistence.h"
+	<iostream>
+	<string>
+	"Local.h"
+	"Controler.h"
+

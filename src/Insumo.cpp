@@ -59,22 +59,26 @@ std::string Insumo::getNome(){
 
 std::string Insumo::getDescricao(){
 
-    std::string desc = "Nome: " + nome + "\nQuantidade: " + std::to_string(quantidade) + "\nValor Unitario: R$ " + std::to_string(valorUnitario) + "\nData de Vencimento: " + dtVencimento + "\nNome do Fabricante:" + nomeFabricante + "\n";
+    std::string desc = "Nome: "
+    + nome + "\nQuantidade: "
+    + std::to_string(quantidade)
+    + "\nValor Unitario: R$ "
+    + std::to_string(valorUnitario)
+    + "\nData de Vencimento: "
+    + dtVencimento
+    + "\nNome do Fabricante:"
+    + nomeFabricante + "\n";
     return desc;
 }
 
-std::string Insumo::getDados(){
-
-    std::string desc = std::to_string(tipoInsumo) + "\n"
-    +std::to_string(ativo)+ "\n"
-    + nome + "\n"
-    + std::to_string(quantidade) + "\n"
-    + std::to_string(valorUnitario) + "\n"
-    + dtVencimento + "\n" + nomeFabricante +"\n";
-    return desc;
-}
-
-void Insumo::leAtributos(std::ifstream &ArqInsumos)
+std::string Insumo::getDados()
 {
-
+    std::string desc =  nome + "\n"
+    + std::to_string(quantidade) + "\n"
+    +  std::to_string(valorUnitario) + "\n"
+    +  dtVencimento + "\n"
+    + nomeFabricante + "\n";
+    return desc;
 }
+
+

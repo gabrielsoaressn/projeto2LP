@@ -1,21 +1,23 @@
 #ifndef PERSISTENCE_H
 #define PERSISTENCE_H
+
 #include <fstream>
 
-#include "Controler.h"
 #include "Local.h"
 #include "Insumo.h"
-#include "EPI.h"
+#include "Controler.h"
+#include "Vacina.h"
 #include "Medicamento.h"
+#include "EPI.h"
 
 
 class Persistence
 {
     public:
         Persistence();
-       // virtual ~Persistence();
-        void salvarArquivo(Local loc);
-        Insumo lerArquivo(Local loc);
+
+        void salvarArquivo(Controler c1);
+       // Insumo lerArquivo(Controler c1);
     protected:
 
     private:

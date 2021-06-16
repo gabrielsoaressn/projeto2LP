@@ -13,9 +13,14 @@ Medicamento::Medicamento()
 
 std::string Medicamento::getDescricao(){
 
-    std::string aux = Insumo::getDescricao() + "\n" + "Tipo  de Administracao: " + administracao + "\nDosagem: " + dosagem + " ml.\nDisponibilizacao: " + disponibilizacao + "\n";
+    std::string aux = Insumo::getDescricao() + "\n"
+    + "Tipo  de Administracao: "
+    + administracao + "\nDosagem: "
+    + dosagem + " ml.\nDisponibilizacao: "
+    + disponibilizacao + "\n";
     return aux;
 }
+
 
 void Medicamento::setAdministracao(std::string adm){
     administracao = adm;
@@ -26,11 +31,18 @@ void Medicamento::setDosagem(std::string dos){
 void Medicamento::setDisponibilizacao(std::string disp){
     disponibilizacao = disp;
 }
-
 std::string Medicamento::getDados()
 {
-    std:: string aux = Insumo::getDados()+ "\n" +
-    administracao + "\n"
-    + dosagem;
-    return aux;
+    std::string desc =  administracao + "\n"
+    + dosagem + "\n"
+    +  disponibilizacao + "\n";
+    return desc;
 }
+/*
+void Medicamento::leAtributos(std::ifstream &ArqInsumos)
+{
+    ArqInsumos >> administracao;
+    ArqInsumos >> dosagem;
+    ArqInsumos >> disponibilizacao;
+}
+*/

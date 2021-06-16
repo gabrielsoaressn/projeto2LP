@@ -23,13 +23,25 @@ void Vacina::setIntervalo(int it){
 
 std::string Vacina::getDescricao(){
 
-    std::string aux = Insumo::getDescricao() + "\n" + "Tipo  de Vacina: " + tipo + "\nQuantidade de Doses: " + std::to_string(quantDoses) + " doses\nIntervalo: " + std::to_string(intervalo) + " mes(es)." + "\n";
+    std::string aux = Insumo::getDescricao() + "\n"
+    + "Tipo  de Vacina: " + tipo
+    + "\nQuantidade de Doses: "
+    + std::to_string(quantDoses)
+    + " doses\nIntervalo: " + std::to_string(intervalo) + " mes(es)." + "\n";
     return aux;
 }
-
+std::string Vacina::getDados()
+{
+    std::string desc = tipo + "\n"
+    +  std::to_string(quantDoses) + "\n"
+    +  std::to_string(intervalo) + "\n";
+    return desc;
+}
+/*
 void Vacina::leAtributos(std::ifstream &ArqInsumos)
 {
     ArqInsumos >> tipo;
     ArqInsumos >> quantDoses;
     ArqInsumos >> intervalo;
 }
+*/

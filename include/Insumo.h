@@ -2,7 +2,6 @@
 #define INSUMO_H
 
 #include <string>
-#include <fstream>
 
 class Insumo
 {
@@ -25,8 +24,8 @@ class Insumo
         int getQuantidade();
 
         virtual std::string getDescricao();
-        std::string getDados();
-        virtual void leAtributos(std::ifstream &ArqInsumos);
+        virtual std::string getDados();
+       // virtual void leAtributos(std::ifstream &ArqVacina);
 
     protected:
         std::string nome;
@@ -36,7 +35,6 @@ class Insumo
         std::string nomeFabricante;
         int tipoInsumo; //1 - Vacina 2 - Medicamentos 3 - EPI
         int ativo;
-
 
     private:
 };

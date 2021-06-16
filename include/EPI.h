@@ -12,6 +12,8 @@ class EPI: public Insumo
 
         void setTipo(int t);
         void setDescricao(std::string desc);
+        std::string getDados();
+//        void leAtributos(std::ifstream &ArqVacina);
 
     protected:
 

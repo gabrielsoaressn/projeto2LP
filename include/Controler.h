@@ -26,7 +26,7 @@ class Controler
     protected:
 
     private:
-        Local *locais[28];
+        Local locais[28];
 
 };
 

@@ -15,7 +15,8 @@ class Vacina: public Insumo
         void setTipo(std::string ti);
         void setQuantDoses(int qD);
         void setIntervalo(int it);
-        void leAtributos(std::ifstream &ArqInsumos);
+        std::string getDados();
+     //   void leAtributos(std::ifstream &ArqVacina);
 
     protected:
 
